@@ -25,6 +25,7 @@
 
 
 </script>
+<h1>Kalenderwochen-Anzeige (KWs)</h1>
 
 <main>
   {#each dates as date}
@@ -34,7 +35,12 @@
 
 <button type="button">Zum heutigen Datum</button>
 
+<footer><a href="https://github.com/referenz/kws">Quellcode auf GitHub</a></footer>
+
 <style>
+  h1 {
+    text-align: center;
+  }
   button {
     position: fixed;
     top: 1em;
