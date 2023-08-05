@@ -1,0 +1,58 @@
+html {
+  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15;
+  /* 1. Correct the line height in all browsers. */
+  -webkit-text-size-adjust: 100%;
+  /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+  -moz-tab-size: 4;
+  /* 3. Use a more readable tab size (opinionated). */
+  tab-size: 4;
+  /* 3 */
+}
+
+body {
+  margin: 0;
+  /* Remove the margin in all browsers. */
+}
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+}
+
+/* Alles hierüber von modern-modernize.css übernommen */
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  padding-bottom: .5em;
+  font-weight: bold;
+}
+
+th, td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ebebeb;
+}
+
+tbody tr:hover th {
+  font-weight: 900;
+}
