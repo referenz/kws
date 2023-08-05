@@ -1,11 +1,10 @@
 <script lang="ts">
   import { Temporal } from "@js-temporal/polyfill";
-  import { onMount } from "svelte";
 
   export let date: Temporal.PlainDate;
-  export let hasCurrentDay: boolean;
+  export let isCurrentWeek: boolean;
 
-  const currentDay = hasCurrentDay && date.day === Temporal.Now.plainDateISO().day;
+  const currentDay = isCurrentWeek && date.day === Temporal.Now.plainDateISO().day;
 </script>
 
 <td class:currentDay>
@@ -13,6 +12,9 @@
 </td>
 
 <style>
+  td {
+    text-align: right;
+  }
   td.currentDay {
     color: red;
   }
