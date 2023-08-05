@@ -15,22 +15,22 @@
   }
 
   const today = Temporal.Now.plainDateISO();
-  const currentWeek = today.weekOfYear === first.weekOfYear && today.year === current.year;
+  const isCurrentWeek = today.weekOfYear === first.weekOfYear && today.year === current.year;
 </script>
 
-<tr class:currentWeek>
+<tr class:isCurrentWeek>
   <th>{first.weekOfYear}</th>
   {#each checkbox as [_, date]}
     {#if !date}
       <td class="empty-date" />
     {:else}
-      <Day {date} hasCurrentDay={currentWeek} />
+      <Day {date} {isCurrentWeek} />
     {/if}
   {/each}
 </tr>
 
 <style>
-  tr.currentWeek {
+  tr.isCurrentWeek {
     background-color: yellow;
   }
 </style>
