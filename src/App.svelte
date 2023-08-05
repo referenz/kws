@@ -9,7 +9,6 @@
   const max = 12;
 
   const dates = [];
-
   for (let i = min; i <= max; i++) {
     const currDate = now.add({ months: i });
     dates.push(currDate);
@@ -28,13 +27,17 @@
 
 <h1>Kalenderwochen-Anzeige (KWs)</h1>
 
-<main>
-  {#each dates as date}
-    <Month year={date.year} month={date.month} />
-  {/each}
-</main>
+<div>
+  <nav>
+    <button type="button">Zum heutigen Datum</button>
+  </nav>
 
-<button type="button">Zum heutigen Datum</button>
+  <main>
+    {#each dates as date}
+      <Month year={date.year} month={date.month} />
+    {/each}
+  </main>
+</div>
 
 <footer><a href="https://github.com/referenz/kws">Quellcode auf GitHub</a></footer>
 
@@ -42,14 +45,14 @@
   h1 {
     text-align: center;
   }
-  button {
-    position: fixed;
-    top: 1em;
-    left: 1em;
 
-    display: block;
+  nav {
+    text-align: center;
+  }
+
+  button {
     background-color: rgb(144, 238, 144);
-    height: 2em;
+    padding: 0.5em 1em;
 
     border: 1px solid black;
     border-radius: 15px;
@@ -62,5 +65,42 @@
 
   button:active {
     background-color: red;
+  }
+
+  @media (min-width: 768px) {
+    div {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    main {
+      grid-column: 2;
+      overflow: scroll;
+    }
+
+    nav {
+      grid-column: 1;
+      max-height: 100vh;
+
+      position: sticky;
+      top: 1em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      margin: 0 1em;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 1em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    button {
+      background-color: rgba(144 238 144 / 0.67);
+    }
   }
 </style>
