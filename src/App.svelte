@@ -16,15 +16,16 @@
   }
 
   onMount(() => {
-    const button = document.querySelector('button');
-    button.addEventListener(('click'), () => {
-      const today = document.querySelector('.currentDay');
-      today?.scrollIntoView({block: 'center', behavior: 'smooth'});
-    })
-  })
+    const today = document.querySelector(".currentDay");
+    today?.scrollIntoView({ block: "center", behavior: "smooth" });
 
-
+    const button = document.querySelector("button");
+    button.addEventListener("click", () => {
+      today?.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+  });
 </script>
+
 <h1>Kalenderwochen-Anzeige (KWs)</h1>
 
 <main>
@@ -51,16 +52,15 @@
     height: 2em;
 
     border: 1px solid black;
-    border-radius:15px;
+    border-radius: 15px;
   }
 
   button:hover {
-      background-color:rgb(0, 255, 0);
-      transition: 0.3s;
+    background-color: rgb(0, 255, 0);
+    transition: 0.3s;
   }
 
-button:active {
+  button:active {
     background-color: red;
-}
+  }
 </style>
-

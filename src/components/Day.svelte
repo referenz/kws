@@ -5,16 +5,7 @@
   export let date: Temporal.PlainDate;
   export let hasCurrentDay: boolean;
 
-  const currentDay = hasCurrentDay && (date.day === Temporal.Now.plainDateISO().day)
-
-
-  onMount(() => {
-    if (currentDay)
-        document.querySelector('.currentDay')?.scrollIntoView({block: 'center', behavior: 'smooth'});
-  })
-
-
-
+  const currentDay = hasCurrentDay && date.day === Temporal.Now.plainDateISO().day;
 </script>
 
 <td class:currentDay>
@@ -22,7 +13,7 @@
 </td>
 
 <style>
-    td.currentDay {
-        color: red;
-    }
+  td.currentDay {
+    color: red;
+  }
 </style>
