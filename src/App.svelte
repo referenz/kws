@@ -89,12 +89,12 @@
 
   @media (max-width: 768px) {
     main {
-      margin: 0 1em;
+      margin: 0 .5em;
     }
 
     nav {
       position: fixed;
-      bottom: 1em;
+      bottom: 1.5em;
       left: 50%;
       transform: translateX(-50%);
     }
