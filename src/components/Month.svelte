@@ -40,7 +40,7 @@
     return instant.epochSeconds;
   }
 
-  const weeks = [];
+  const weeks : [Temporal.PlainDate, Temporal.PlainDate][] = [];
   weeks.push([getFirstOfMonth(), getNextSunday(getFirstOfMonth())]);
 
   let current = getFirstOfMonth();

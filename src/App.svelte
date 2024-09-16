@@ -8,7 +8,7 @@
   const min = -12;
   const max = 12;
 
-  const dates = [];
+  const dates : Temporal.PlainDate[] = [];
   for (let i = min; i <= max; i++) {
     const currDate = now.add({ months: i });
     dates.push(currDate);
@@ -19,7 +19,7 @@
     today?.scrollIntoView({ block: "center", behavior: "smooth" });
 
     const button = document.querySelector("button");
-    button.addEventListener("click", () => {
+    button?.addEventListener("click", () => {
       today?.scrollIntoView({ block: "center", behavior: "smooth" });
     });
   });

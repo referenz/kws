@@ -4,9 +4,9 @@
   export let first: Temporal.PlainDate;
   export let last: Temporal.PlainDate;
 
-  const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
+  const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] as const;
 
-  const checkbox = new Map(weekDays.map((_, i) => [i + 1, undefined]));
+  const checkbox: Map<number, undefined | Temporal.PlainDate> = new Map(weekDays.map((_, i) => [i + 1, undefined]));
 
   let current = first;
   while (!current.subtract({ days: 1 }).equals(last)) {
