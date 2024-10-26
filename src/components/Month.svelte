@@ -1,8 +1,13 @@
 <script lang="ts">
   import { Temporal } from "@js-temporal/polyfill";
   import Week from "./Week.svelte";
-  export let year: number;
-  export let month: number;
+
+  interface Props {
+    year: number;
+    month: number;
+  }
+
+  let { year, month }: Props = $props();
 
   const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
 
@@ -40,7 +45,7 @@
     return instant.epochSeconds;
   }
 
-  const weeks : [Temporal.PlainDate, Temporal.PlainDate][] = [];
+  const weeks: [Temporal.PlainDate, Temporal.PlainDate][] = [];
   weeks.push([getFirstOfMonth(), getNextSunday(getFirstOfMonth())]);
 
   let current = getFirstOfMonth();
@@ -55,10 +60,12 @@
 <table>
   <caption>{getMonthName()} {year}</caption>
   <thead>
-    <th>KW</th>
-    {#each weekDays as weekDay}
-      <th>{weekDay}</th>
-    {/each}
+    <tr>
+      <th>KW</th>
+      {#each weekDays as weekDay}
+        <th>{weekDay}</th>
+      {/each}
+    </tr>
   </thead>
   <tbody>
     {#each weeks as [first, last]}

@@ -1,8 +1,13 @@
 <script lang="ts">
   import { Temporal } from "@js-temporal/polyfill";
   import Day from "./Day.svelte";
-  export let first: Temporal.PlainDate;
-  export let last: Temporal.PlainDate;
+
+  interface Props {
+    first: Temporal.PlainDate;
+    last: Temporal.PlainDate;
+  }
+
+  let { first, last }: Props = $props();
 
   const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] as const;
 
@@ -22,7 +27,7 @@
   <th>{first.weekOfYear}</th>
   {#each checkbox as [_, date]}
     {#if !date}
-      <td class="empty-date" />
+      <td class="empty-date"></td>
     {:else}
       <Day {date} {isCurrentWeek} />
     {/if}

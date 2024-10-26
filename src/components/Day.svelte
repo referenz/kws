@@ -1,8 +1,12 @@
 <script lang="ts">
   import { Temporal } from "@js-temporal/polyfill";
 
-  export let date: Temporal.PlainDate;
-  export let isCurrentWeek: boolean;
+  interface Props {
+    date: Temporal.PlainDate;
+    isCurrentWeek: boolean;
+  }
+
+  let { date, isCurrentWeek }: Props = $props();
 
   const currentDay = isCurrentWeek && date.day === Temporal.Now.plainDateISO().day;
 </script>

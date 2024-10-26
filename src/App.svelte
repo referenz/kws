@@ -8,7 +8,7 @@
   const min = -12;
   const max = 12;
 
-  const dates : Temporal.PlainDate[] = [];
+  const dates: Temporal.PlainDate[] = [];
   for (let i = min; i <= max; i++) {
     const currDate = now.add({ months: i });
     dates.push(currDate);
@@ -89,7 +89,7 @@
 
   @media (max-width: 768px) {
     main {
-      margin: 0 .5em;
+      margin: 0 0.5em;
     }
 
     nav {
