@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
   import { Temporal } from "@js-temporal/polyfill";
   import Month from "./components/Month.svelte";
@@ -14,14 +16,13 @@
     dates.push(currDate);
   }
 
-  onMount(() => {
+  function scrollToToday() {
     const today = document.querySelector(".currentDay");
     today?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }
 
-    const button = document.querySelector("button");
-    button?.addEventListener("click", () => {
-      today?.scrollIntoView({ block: "center", behavior: "smooth" });
-    });
+  onMount(() => {
+    scrollToToday();
   });
 </script>
 
@@ -29,7 +30,7 @@
 
 <div>
   <nav>
-    <button type="button">Zum heutigen Datum</button>
+    <button type="button" onclick={scrollToToday}>Zum heutigen Datum</button>
   </nav>
 
   <main>
@@ -60,7 +61,7 @@
 
   button:hover {
     background-color: rgb(0, 255, 0);
-    transition: 0.3s;
+    transition: background-color 0.3s;
   }
 
   button:active {

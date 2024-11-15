@@ -6,7 +6,7 @@
     isCurrentWeek: boolean;
   }
 
-  let { date, isCurrentWeek }: Props = $props();
+  const { date, isCurrentWeek }: Props = $props();
 
   const currentDay = isCurrentWeek && date.day === Temporal.Now.plainDateISO().day;
 </script>

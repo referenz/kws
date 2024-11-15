@@ -7,7 +7,7 @@
     last: Temporal.PlainDate;
   }
 
-  let { first, last }: Props = $props();
+  const { first, last }: Props = $props();
 
   const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] as const;
 

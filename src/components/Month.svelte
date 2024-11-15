@@ -7,7 +7,7 @@
     month: number;
   }
 
-  let { year, month }: Props = $props();
+  const { year, month }: Props = $props();
 
   const weekDays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
 
